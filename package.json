@@ -9,7 +9,6 @@
     "install": "^0.12.2",
     "libphonenumber-js": "^1.7.9",
     "loglevel": "^1.6.1",
-    "npm": "^6.8.0",
     "radium": "^0.25.1",
     "react": "^16.8.3",
     "react-animations": "^1.0.0",
