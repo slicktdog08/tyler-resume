@@ -29,7 +29,7 @@ class aboutMe extends React.Component{
                       <section className="about-me padding-top-10" style={AnimationStyles.styles.fade_in_up}> 
                         {/* Personal Info */}
                       
-                        <h5 className="tittle">Houston React Developer</h5>
+                        <h5 className="tittle">Houston React/NodeJS Developer</h5>
                         <div className="padding-20">
                           {/*Bio Goes Here*/}
                           {this.props.main.details.bioHTML ?
