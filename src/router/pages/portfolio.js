@@ -1,18 +1,140 @@
 import React from 'react'
 import { StyleRoot } from 'radium'
+import {Link} from 'react-router-dom'
+import Axios from 'axios'
+import {Col, Row, Container} from 'reactstrap'
+import withStyles from 'react-jss'
+import Masonry from 'react-masonry-component';
 
-export default class portfolio extends React.Component{
 
+
+const styles = {
+    portfolioContainer: {
+        width: '48%',
+        margin: '1%',
+        display: 'inline-block',
+        border: '1px solid black',
+        borderTopLeftRadius: '10px',
+        borderTopRightRadius: '10px',
+        borderBottomLeftRadius: '10px',
+        borderBottomRightRadius: '10px'
+    },
+    portfolioName: {
+        textAlign: 'center',
+        color: '#346ABB',
+        fontSize: '1.3em',
+        padding: '10px',
+        borderBottom: '2px solid #346ABB',
+        background: '#F5F5F5',
+        borderTopLeftRadius: '10px',
+        borderTopRightRadius: '10px',
+        transition: 'all .2s ease-in-out',
+        '&:hover':{
+            fontSize: '1.4em'
+        }
+
+
+    },
+    portfolioViewButton: {
+        textAlign: 'center',
+        color: '#ffffff',
+        fontSize: '1.1em',
+        padding: '10px',
+        fontWeight: '600',
+        borderTop: '2px solid #346ABB',
+        background: '#346ABB',
+        borderBottomLeftRadius: '10px',
+        borderBottomRightRadius: '10px',
+        transition: 'all .2s ease-in-out',
+        '&:hover, &:active': {
+            background: '#ffffff',
+            color: '#346ABB',
+            borderTop: '3px solid #346ABB',
+            fontSize: '1.2em'
+        }
+    },
+    portfolioImgDiv: {
+        overflow: 'hidden'
+    },
+    portfolioImg: {
+        transition: 'all .2s ease-in-out',
+        overflow: 'hidden',
+        '&:hover':{
+            transform: 'scale(1.2)'
+        }
+    }
+}
+
+const masonryOptions = {
+    transitionDuration: 0
+};
+
+class portfolio extends React.Component{
+    constructor(props){
+        super(props);
+        this.state = {
+            portfolio: null
+        }
+    }
+    componentWillMount(){
+        Axios({
+            method: 'get',
+            url: 'https://api.clickficks.com/portfolio'
+        })
+        .then(res=>{
+            this.setState({portfolio:res.data})
+        })
+        .catch(err=>{
+            console.log('An error occurred while pulling portfolio data! ', err)
+        })
+    }
     render(){
-        var AnimationStyles = require('../../utils/animation')
+        var AnimationStyles = require('../../utils/animation');
+        const {classes} = this.props;
+        const childElements = typeof(this.state.portfolio) != 'undefined' &&
+            this.state.portfolio != null &&
+            this.state.portfolio.length > 0 &&
+            this.state.portfolio.map(p=>{
+                return(
+                        <div className={classes.portfolioContainer}>
+                            <Link to={`/portfolio/${p.slug}`}>
+                                <div className={classes.portfolioName}>{p.name}</div>
+                                <div className={classes.portfolioImgDiv}>
+                                    <img src={p.images[0].imgSrc} className={`img-responsive ${classes.portfolioImg}`}/>
+                                </div>
+                                <div className={classes.portfolioViewButton}>
+                                    View Details
+                                </div>
+                            </Link>
+                        </div>
+                )
+        })
         return(
             <StyleRoot>
                 {/* PORTFOLIO */}
-                <div role="tabpanel" className="tab-pane" id="portfolio" style={AnimationStyles.styles.bounce_in_right}>
-                        <div className="inside-sec"> 
-                            {/* BIO AND SKILLS */}
-                            <h5 className="tittle" style={AnimationStyles.styles.slide_in_right}>PORTFOLIO</h5>
-                            {/* PORTFOLIO */}
+                <div role="tabpanel" className="tab-panel" id="portfolio" style={AnimationStyles.styles.bounce_in_right}>
+                    <div className="inside-sec"> 
+                    <Masonry
+                        className={'default'} // default ''
+                        options={masonryOptions}
+                        elementType={'div'} // default 'div'
+                        disableImagesLoaded={false} // default false
+                        updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                    >
+                        {childElements}
+                    </Masonry>
+                    </div>
+                </div>
+            </StyleRoot>
+        )
+    }
+}
+
+export default withStyles(styles)(portfolio)
+
+/*
+<h5 className="tittle" style={AnimationStyles.styles.slide_in_right}>PORTFOLIO</h5>
+                           
                             <section className="portfolio padding-top-50 padding-bottom-50" style={AnimationStyles.styles.fade_in_up}> 
                             <div>
                                 Majority of the websites I create are designed to streamline internal business processess.
@@ -31,9 +153,5 @@ export default class portfolio extends React.Component{
                                 </li>
                             </ul>
                             </section>
-                        </div>
-                        </div>
-            </StyleRoot>
-        )
-    }
-}
+
+                            */

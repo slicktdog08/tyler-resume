@@ -41,7 +41,7 @@ class socialProfiles extends React.Component{
                             <ul>
                                 {this.props.main.socialProfiles.map(profile => {
                                     return(
-                                        <li> 
+                                        <li key={profile.name}> 
                                             <a href={profile.url} target="_blank">
                                                 <i className={profile.icon} />
                                             </a> 

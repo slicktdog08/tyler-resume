@@ -1,7 +1,6 @@
 import React from 'react'
 import { StyleRoot } from 'radium'
 import { withRouter } from 'react-router-dom'
-import { ENGINE_METHOD_DIGESTS } from 'constants';
 
 class navbar extends React.Component{
     constructor(props){
@@ -15,7 +14,8 @@ class navbar extends React.Component{
     componentWillMount(){
      var path = window.location.pathname;
      path =  path.substring(1);
-     var newState = Object.assign({}, this.state.page)
+     var newState = Object.assign({}, this.state.page);
+     console.log('Path is currently ', path)
      switch(path){
       case 'aboutMe':
         newState = 'aboutMe';
@@ -33,12 +33,52 @@ class navbar extends React.Component{
         newState = 'contact'
         break;
       default:
-        newState = 'aboutMe'
+        //try to detect if this is a blog route
+        if(this.detectBlogRoute(path)){
+          newState = 'blog'
+        }
+        else{
+          if(this.detectPortfolioRoute(path)){
+            newState = 'portfolio'
+          }
+          else{
+            newState = 'aboutUs'
+          }
+          
+        }
      }
      this.setState({
        page: newState
+     }, ()=> {
+       console.log(this.state.page)
      })
     }
+
+    detectBlogRoute = (route) => {
+      //will take a route and determine if this is a blog route
+      //Will return true if blog route and false if not
+      var path = String(route).substring(0,4);
+      console.log('Path in detectBlogRoute is ', path)
+      if(path === 'blog'){
+        return true
+      }
+      else{
+        return false
+      }
+    }
+
+    detectPortfolioRoute = (route) => {
+      //will take a route and determine if this is a portfolio route
+      //Will return true if portfolio route is detected and false if not
+      var path = String(route).substring(0,9);
+      if(path === 'portfolio'){
+        return true
+      }
+      else{
+        return false
+      }
+    }
+
     navbarController = (event) =>{
       this.setState({
         page: event.target.id

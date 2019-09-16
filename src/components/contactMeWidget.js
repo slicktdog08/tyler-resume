@@ -83,7 +83,7 @@ export default class contactMeWidget extends React.Component{
                         </li>
                         <li className="col-sm-12">
                           <label>
-                            <textarea className="form-control" id="message" rows={5} placeholder="Message" defaultValue={""} onChange={this.handleChange} value={this.state.message}/>
+                            <textarea className="form-control" id="message" rows={5} placeholder="Message" onChange={this.handleChange} value={this.state.message}/>
                             {this.validator.message('Message', this.state.message, 'required|max:10000')}
                           </label>
                         </li>

@@ -17,7 +17,7 @@ class professionalDetails extends React.Component{
                 {this.props.main.details ?
                     <div style={AnimationStyles.styles.zoom_in_up}>
                         <h5 className="tittle">Professional Details</h5>
-                        <img src={this.props.main.details.imageURL} className="img-responsive profile-img" alt />
+                        <img src={this.props.main.details.imageURL} className="img-responsive profile-img" alt='Tyler Clay Headshot' />
                         <ul className="personal-info">
                                 <li>
                                 <p> <span> Name</span> {this.props.main.details.name} </p>

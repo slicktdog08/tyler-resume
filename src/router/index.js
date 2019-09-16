@@ -13,7 +13,9 @@ import Navbar from '../components/navbar'
 import AboutMe from './pages/aboutMe'
 import Resume from './pages/resume'
 import Portfolio from './pages/portfolio'
+import PortfolioDetail from './pages/portfolioDetail'
 import Blog from './pages/blog'
+import BlogDetail from './pages/blogDetail'
 import Contact from './pages/contact'
 import Admin from './pages/admin/index'
 
@@ -39,7 +41,7 @@ export default class extends React.Component{
                     <div className="top-head">
                         <div className="row">
                         <div className="col-sm-6">
-                            <h4>TYLER CLAY Computer Networking and Software </h4>
+                            <h4>TYLER CLAY FULL-STACK JAVASCRIPT DEVELOPER </h4>
                             
                             </div>
                         
@@ -70,8 +72,10 @@ export default class extends React.Component{
                                             <Route path='/' component={AboutMe} exact/>
                                             <Route path='/aboutMe' component={AboutMe}/>
                                             <Route path='/resume' component={Resume}/>
-                                            <Route path='/portfolio' component={Portfolio}/>
-                                            <Route path='/blog' component={Blog}/>
+                                            <Route path='/portfolio' exact component={Portfolio}/>
+                                            <Route path='/portfolio/:slug' component={PortfolioDetail}/>
+                                            <Route path='/blog' exact component={Blog}/>
+                                            <Route path='/blog/:slug' component={BlogDetail}/>
                                             <Route path='/contact' component={Contact}/>
                                             <Route path='/admin' component={Admin}/>
                                     </Switch>

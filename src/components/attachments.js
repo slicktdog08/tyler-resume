@@ -11,7 +11,6 @@ import * as Scroll from 'react-scroll';
 
 //Document Viewer Dependencies
 import FileViewer from 'react-file-viewer';
-import { CustomErrorComponent } from 'custom-error';
 
 const mapStateToProps = state => {
     return state
@@ -108,9 +107,9 @@ class attachments extends React.Component{
                             <ul>
                                 {this.props.main.attachments.map(item =>{
                                     return(
-                                        <li style={AnimationStyles.styles.zoom_in_up}>
+                                        <li style={AnimationStyles.styles.zoom_in_up} key={item.name}>
                                             <p><img src={this.returnIcon(item.fileType)['icon']} alt={this.returnIcon(item.fileType)['alt']} />
-                                            {item.name} <a href={item.url} target="_blank"><i className="fa fa-cloud-download" /></a> 
+                                            {item.name} <a href={item.url} target="_blank" rel="noopener noreferrer"><i className="fa fa-cloud-download" /></a> 
                                             <a href="javascript:void(0)" id={`${JSON.stringify(item)}`} onClick={this.handleDocumentClick}><i className="fa fa-eye" /></a></p>
                                         </li>
                                     )

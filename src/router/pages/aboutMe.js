@@ -12,10 +12,7 @@ const mapStateToProps = state => {
 
 
 class aboutMe extends React.Component{
-    constructor(props){
-      super(props);
-      
-    }
+
     
     
     render(){

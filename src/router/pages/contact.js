@@ -129,7 +129,7 @@ class contact extends React.Component{
                             </div>
                             {/* Calendly */}
                           
-                            <div class="calendly-inline-widget" data-url="https://calendly.com/clickficks/schedule" style="min-width:320px;height:580px;"></div>
+                            <div className="calendly-inline-widget" data-url="https://calendly.com/clickficks/schedule" style={{minWidth: '320px', height: '580px'}}></div>
                         
                             {/* Contact  */}
                             <h5 className="tittle">SAY HELLO</h5>
@@ -144,7 +144,7 @@ class contact extends React.Component{
                                     </div> : <div/>
                                 }
                                 {/* FORM */}
-                                <form role="form" id="contact_form_1" className="contact-form" method="post" onsubmit="return false">
+                                <div id="contact_form_1" className="contact-form">
                                     <ul className="row">
                                     <li className="col-sm-4">
                                         <label>
@@ -166,7 +166,7 @@ class contact extends React.Component{
                                     </li>
                                     <li className="col-sm-12">
                                         <label>
-                                        <textarea className="form-control" id="message" rows={5} placeholder="MESSAGE ..." defaultValue={""} onChange={this.handleChange} value={this.state.message} />
+                                        <textarea className="form-control" id="message" rows={5} placeholder="MESSAGE ..." onChange={this.handleChange} value={this.state.message} />
                                         {this.validator.message('Message', this.state.message, 'required|max:10000')}
                                         </label>
                                     </li>
@@ -174,7 +174,7 @@ class contact extends React.Component{
                                         <button type="button" onClick={this.handleSubmit} >SEND ME</button>
                                     </li>
                                     </ul>
-                                </form>
+                                </div>
                                 </div>
                             </div>
                             </section>
