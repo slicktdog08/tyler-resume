@@ -1,6 +1,7 @@
 import React from 'react'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import { StyleRoot } from 'radium'
+import {connect} from 'react-redux'
 
 
 import ProfessionalDetails from '../components/professionalDetails'
@@ -19,8 +20,11 @@ import BlogDetail from './pages/blogDetail'
 import Contact from './pages/contact'
 import Admin from './pages/admin/index'
 
+const mapStateToProps = state => {
+    return {state}
+}
 
-export default class extends React.Component{
+class index extends React.Component{
 
     editResume = () =>{
         alert('Your location does not match the geographic location of the person who can edit this resume. You will not be allowed to attempt authentication!')
@@ -41,7 +45,7 @@ export default class extends React.Component{
                     <div className="top-head">
                         <div className="row">
                         <div className="col-sm-6">
-                            <h4>TYLER CLAY FULL-STACK JAVASCRIPT DEVELOPER </h4>
+                            <h4>{typeof(this.props.state.main.details) != 'undefined' ? this.props.state.main.details.tagline : 'TYLER CLAY FULL-STACK JAVASCRIPT DEVELOPER'}</h4>
                             
                             </div>
                         
@@ -102,3 +106,5 @@ export default class extends React.Component{
     )
         }
     }
+
+    export default connect(mapStateToProps)(index)

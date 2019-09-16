@@ -12,6 +12,7 @@ const mainReducer = (state= [], action) => {
             return {...state,
                 details:{
                     detailsID: action.detailsID,
+                    tagline: action.tagline,
                     imageURL: action.imageURL,
                     name: action.name,
                     city: action.city,
@@ -28,7 +29,8 @@ const mainReducer = (state= [], action) => {
                         __html: action.bio
                     },
                     age: action.age,
-                    parsedPhone: parsePhoneNumberFromString(action.phone, 'US').formatNational() ? parsePhoneNumberFromString(action.phone, 'US').formatNational() : ''
+                    parsedPhone: parsePhoneNumberFromString(action.phone, 'US').formatNational() ? parsePhoneNumberFromString(action.phone, 'US').formatNational() : '',
+                    
                 }
 
             }

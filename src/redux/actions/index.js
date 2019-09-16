@@ -21,6 +21,7 @@ export const addDetails = details => ({
     website: details.website,
     bio: details.bio,
     age: details.age,
+    tagline: details.tagline
 })
 
 export const addServices = services => ({
