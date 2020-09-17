@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import Router from './router/index'
 import "./assets/css/ionicons.min.css";
 import "./assets/css/bootstrap/bootstrap.min.css"
@@ -11,6 +11,8 @@ import 'babel-polyfill'
 import Axios from 'axios'
 import { connect } from 'react-redux'
 import { addDetails } from './redux/actions/index'
+import RingLoader from "react-spinners/RingLoader";
+
 
 const mapStateToProps = state => {
   return state
@@ -22,25 +24,33 @@ const mapDispatchToProps = (dispatch) =>{
   }
 }
 
-class App extends Component {
-
-  componentWillMount(){
-    if(!this.props.main.details){
+const App = (props) => {
+  const [loading, setLoading] = useState(true);
+  const {addDetails} = props;
+  useEffect(() => {
+    if(!props.main.details){
       Axios({
         method: 'post',
         url: 'https://tylerclay.info/getDetails'
       })
       .then(res =>{
-        this.props.addDetails(res.data[0])
+        addDetails(res.data[0]);
+        setLoading(false)
       })
     }
-    
-  }
-  render() {
-    return (
-      <Router/>
-    );
-  }
+  }, [])
+ 
+  return (
+    <>
+      {!loading ? 
+        <Router/> : 
+        <div className="sweet-loading">
+          <RingLoader color={'#60DBFB'} size={150} class/>
+        </div>
+      }
+    </>
+  );
+  
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);
