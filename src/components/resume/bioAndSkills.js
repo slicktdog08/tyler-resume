@@ -24,7 +24,7 @@ class bioAndSkills extends React.Component{
         if(!this.props.main.resumeBio){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getResumeBio'
+                url: 'https://ap1.tylerclay.tech/getResumeBio'
             })
             .then(res=> {
                 this.props.addResumeBio(res.data);

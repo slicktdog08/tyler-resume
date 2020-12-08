@@ -32,7 +32,8 @@ body
 	padding: 0px;
 }
 body {
-	background: #FFF;
+	background: #000;
+	color: #fff;
 	font-weight: normal;
 	position: relative;
 	font-size: 14px;
@@ -50,7 +51,7 @@ body {
       HEADINGS
 ========================================================*/
 h1, h2, h3, h4, h5, h6 {
-	color: #262626;
+	color: #337AB7;
 	font-weight: bold;
 	text-transform: uppercase;
 	font-family: 'Raleway', sans-serif;
@@ -72,14 +73,14 @@ h5 {
 	font-size: 18px;
 	padding: 20px 0;
 	margin: 0px;
-	color: #333333;
+	color: #fff;
 	letter-spacing: 1px;
 }
 h6 {
 	font-size: 16px;
 }
 p {
-	color: #333333;
+	color: #fff;
 	font-size: 13px;
 	line-height: 20px;
 	letter-spacing: 0.5px;
@@ -109,7 +110,7 @@ li {
 }
 a {
 	text-decoration: none;
-	color: #141414;
+	color: #337AB7;
 }
 .position-center-center {
 	left: 50%;
@@ -126,19 +127,19 @@ a {
 section {
 	position: relative;
 	width: 100%;
-	background: #fff;
+	background: #2B2A2A;
 }
 .resume {
-	background: #f5f5f5;
+	background: #000000;
 	padding: 70px 0;
 }
 h5.tittle {
 	font-size: 18px;
 	padding: 20px;
 	margin: 0px;
-	color: #333333;
+	color: #fff;
 	letter-spacing: 1px;
-	border-bottom: 1px solid #e6e6e6;
+	border-bottom: 1px solid #000;
 }
 /*=======================================================
       TOP HEAD
@@ -155,6 +156,7 @@ h5.tittle {
 	line-height: 38px;
 	margin-right: 30px;
 	display: inline-block;
+	color: #ffffff
 }
 .top-head a {
 	letter-spacing: 1px;
@@ -174,7 +176,7 @@ h5.tittle {
       SIDE BAR
 ========================================================*/
 .side-bar {
-	background: #fff;
+	background: #2b2a2a;
 }
 .side-bar li {
 }
@@ -231,7 +233,7 @@ h5.tittle {
 	display: inline-block;
 }
 .social-icon li a {
-	color: #333333;
+	color: #fff;
 	border: 1px solid #cdcdcd;
 	border-radius: 50%;
 	height: 50px;
@@ -376,7 +378,7 @@ h5.tittle {
 .inside-sec {
 	width: 100%;
 	display: inline-block;
-	background: #fff;
+	background: #2B2A2A;
 }
 .bio-info p {
 	line-height: 24px;
@@ -410,9 +412,9 @@ h5.tittle {
 .accordion .panel-default .panel-heading .panel-title a.collapsed:before {
 	content: "\f217";
 	font-family: "Ionicons";
-	background: #fff;
-	color: #333333;
-	border: 1px solid #e6e6e6;
+	background: #000;
+	color: #fff;
+	border: 1px solid #000;
 	-webkit-transition: all 0.4s ease-in-out;
 	-moz-transition: all 0.4s ease-in-out;
 	-o-transition: all 0.4s ease-in-out;
@@ -1501,15 +1503,18 @@ h5.tittle {
 	text-align: center;
 }
 .isop-filter {
-	background: #fff;
+	background: #000;
 	margin-bottom: 30px;
 	display: inline-block;
 	width: 100%;
+	box-shadow: 4px 4px 35px #337AB7
+	
 }
 .isop-filter li {
 	float: left;
 	width: 20%;
 	text-align: center;
+	
 }
 .isop-filter li a i {
 	margin-right: 8px;
@@ -1522,6 +1527,7 @@ h5.tittle {
 	padding: 20px 0;
 	border-radius: 0px;
 	font-weight: bold;
+	color: #fff
 }
 .isop-filter li a:hover {
 	background: #346abb;

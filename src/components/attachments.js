@@ -38,7 +38,7 @@ class attachments extends React.Component{
         if(!this.props.main.attachments){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getAttachments'
+                url: 'https://ap1.tylerclay.tech/getAttachments'
             })
             .then(res => {
                 this.props.addAttachments(res.data)

@@ -4,6 +4,7 @@ import { connect } from  'react-redux'
 
 import Services from '../../components/aboutMe/services'
 import Skills from '../../components/aboutMe/skills'
+import Instagram from '../../components/aboutMe/instagram'
 
 
 const mapStateToProps = state => {
@@ -37,6 +38,7 @@ class aboutMe extends React.Component{
                         <Services />
                         {/* Skills */}
                         <Skills/>
+                        <Instagram />
                       </section>
                       </div>
                       </div> : <div/>

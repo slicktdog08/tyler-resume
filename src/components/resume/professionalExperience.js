@@ -22,7 +22,7 @@ class professionalExperience extends React.Component{
         if(!this.props.main.professionalExperience){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getProfessionalExperiences'
+                url: 'https://ap1.tylerclay.tech/getProfessionalExperiences'
             })
             .then(res=>{
                 this.props.addProfessionalExperience(res.data)

@@ -13,21 +13,15 @@ const styles = {
         width: '48%',
         margin: '1%',
         display: 'inline-block',
-        border: '1px solid black',
-        borderTopLeftRadius: '10px',
-        borderTopRightRadius: '10px',
-        borderBottomLeftRadius: '10px',
-        borderBottomRightRadius: '10px'
+        background: '#000',
+        minHeight: '260px'
     },
     portfolioName: {
         textAlign: 'center',
-        color: '#346ABB',
+        color: '#fff',
         fontSize: '1.3em',
         padding: '10px',
         borderBottom: '2px solid #346ABB',
-        background: '#F5F5F5',
-        borderTopLeftRadius: '10px',
-        borderTopRightRadius: '10px',
         transition: 'all .2s ease-in-out',
         '&:hover':{
             fontSize: '1.4em'
@@ -43,12 +37,11 @@ const styles = {
         fontWeight: '600',
         borderTop: '2px solid #346ABB',
         background: '#346ABB',
-        borderBottomLeftRadius: '10px',
-        borderBottomRightRadius: '10px',
+        //borderBottomLeftRadius: '10px',
+        //borderBottomRightRadius: '10px',
         transition: 'all .2s ease-in-out',
         '&:hover, &:active': {
-            background: '#ffffff',
-            color: '#346ABB',
+            background: '#000',
             borderTop: '3px solid #346ABB',
             fontSize: '1.2em'
         }

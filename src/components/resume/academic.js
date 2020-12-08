@@ -23,7 +23,7 @@ class academic extends React.Component{
         if(!this.props.main.academicBackgrounds){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getAcademicBackgrounds'
+                url: 'https://ap1.tylerclay.tech/getAcademicBackgrounds'
             })
             .then(res=>{
                 this.props.addAcademicBackgrounds(res.data)

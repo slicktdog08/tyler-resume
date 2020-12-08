@@ -31,7 +31,7 @@ const App = (props) => {
     if(!props.main.details){
       Axios({
         method: 'post',
-        url: 'https://tylerclay.info/getDetails'
+        url: 'https://ap1.tylerclay.tech/getDetails'
       })
       .then(res =>{
         addDetails(res.data[0]);

@@ -21,7 +21,7 @@ class socialProfiles extends React.Component{
         if(!this.props.main.socialProfiles){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getSocialProfiles'
+                url: 'https://ap1.tylerclay.tech/getSocialProfiles'
             })
             .then(res => {
                 this.props.addSocialProfiles(res.data)
