@@ -23,7 +23,7 @@ export default class contactMeWidget extends React.Component{
     handleSubmit = () =>{
       if(this.validator.allValid()){
         Axios({
-          url: `https://tylerclay.info/postContactUs`,
+          url: `https://ap1.tylerthedeveloper.com/postContactUs`,
           method: 'post',
           data:{
             name: this.state.name,

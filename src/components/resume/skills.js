@@ -31,14 +31,14 @@ class skills extends React.Component{
         else{
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getSkills',
+                url: 'https://ap1.tylerthedeveloper.com/getSkills',
             })
             .then( res => {
                 this.props.addSkills(res.data)
             })
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getSkillButtons'
+                url: 'https://ap1.tylerthedeveloper.com/getSkillButtons'
             })
             .then(res => {
                 this.props.addSkillButtons(res.data)

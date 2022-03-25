@@ -39,7 +39,7 @@ class contact extends React.Component{
         if(this.validator.allValid()){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/postContactUs',
+                url: 'https://ap1.tylerthedeveloper.com/postContactUs',
                 data: {
                     name: this.state.name,
                     email: this.state.email,

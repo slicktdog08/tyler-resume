@@ -22,7 +22,7 @@ class professionalExperience extends React.Component{
         if(!this.props.main.professionalExperience){
             Axios({
                 method: 'post',
-                url: 'https://tylerclay.info/getProfessionalExperiences'
+                url: 'https://ap1.tylerthedeveloper.com/getProfessionalExperiences'
             })
             .then(res=>{
                 this.props.addProfessionalExperience(res.data)
@@ -46,7 +46,7 @@ class professionalExperience extends React.Component{
                                                 <div className="media-left"> <span className="sun">{item.startYear} - {item.endYear}</span> </div>
                                                 <div className="media-body"> 
                                                 {/* Company Logo */}
-                                                <div className="company-logo"> <img src={item.logoUrl} alt /> </div>
+                                                <div className="company-logo"> <img src={item.logoUrl} alt style={{maxWidth: 100}}/> </div>
                                                 <h6>{item.name}</h6>
                                                 <p>{item.jobTitle}</p>
                                                 <p>{item.city}, {item.state}, {item.country}</p>

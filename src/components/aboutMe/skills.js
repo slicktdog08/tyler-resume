@@ -27,7 +27,7 @@ class skills extends React.Component{
 
         if(this.props.main.aboutMeSkills){
             Axios({
-                url: 'https://tylerclay.info/getAboutMeSkills',
+                url: 'https://ap1.tylerthedeveloper.com/getAboutMeSkills',
                 method: 'post'
             })
             .then(res=>{

@@ -20,7 +20,7 @@ class services extends React.Component{
       if(!this.props.main.services){
         Axios({
           method: 'post',
-          url: 'https://tylerclay.info/getServices'
+          url: 'https://ap1.tylerthedeveloper.com/getServices'
         })
         .then(res=>{
           this.props.addServices(res.data)
