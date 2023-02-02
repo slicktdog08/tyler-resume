@@ -12,7 +12,7 @@
     "libphonenumber-js": "^1.7.9",
     "loglevel": "^1.6.1",
     "moment": "^2.24.0",
-    "npm": "^6.8.0",
+    "npm": "^9.4.1",
     "radium": "0.26.2",
     "react": "^16.8.3",
     "react-animations": "1.0.0",
