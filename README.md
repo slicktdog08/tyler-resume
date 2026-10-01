@@ -1,4 +1,4 @@
-*** This site is long retired and just stands as a sample of some of my early career code WAY before claude was in the picure ***
+***This site is long retired and just stands as a sample of some of my early career code WAY before claude was in the picure***
 
 This codebase evolved a ton and is now what powers (my personal resume website)[https://candycreative.digital]
 
